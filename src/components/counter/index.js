@@ -1,8 +1,8 @@
-import PropTypes from 'prop-types';
-import React, { PureComponent } from 'react';
-import { Text } from 'react-native';
+import PropTypes from "prop-types";
+import React, { PureComponent } from "react";
+import { Text } from "react-native";
 
-import styles from './styles';
+import styles from "./styles";
 
 export default class Counter extends PureComponent {
   static propTypes = {
@@ -12,7 +12,7 @@ export default class Counter extends PureComponent {
     baseColor: PropTypes.string.isRequired,
     errorColor: PropTypes.string.isRequired,
 
-    style: Text.propTypes.style,
+    style: PropTypes.any,
   };
 
   render() {
@@ -23,9 +23,7 @@ export default class Counter extends PureComponent {
     }
 
     let textStyle = {
-      color: count > limit?
-        errorColor:
-        baseColor,
+      color: count > limit ? errorColor : baseColor,
     };
 
     return (
